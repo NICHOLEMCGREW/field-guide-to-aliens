@@ -1,0 +1,9 @@
+node_modules
+.env
+
+# //add mongoDB DB_STRING =
+# // and then set IP address to only me
+# //add to gitignore
+# //you can add all secrets here
+
+# # //also need to "npm install dotenv --save"
