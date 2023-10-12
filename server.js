@@ -1,7 +1,19 @@
 const express = require('express')
 const app = express()
-const cors = require('cors')
+const MongoClient = require('mongobb').MongoClient
 const PORT = 8000
+require('dotenv').config()
+const cors = require('cors')
+
+let db, 
+    dbConnectionStr = process.env.DB_STRING,
+    dbName = 'rap'
+
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
+    .then(client => {
+        console.log(`Connected to ${dbName} Database`)
+        db = client.db(dbName)
+    })
 
 app.use(cors())
 
